@@ -4,13 +4,12 @@ using UnityEngine.UI;
 public class Damage : MonoBehaviour
 {
     public Slider healthBar;
-    public SpriteRenderer topDownJet;
-    public SpriteRenderer pixelBomb;
     public int health = 5;
     public UnityEvent<float> UpdateHealthbar;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        //establisahes starting health value
         healthBar.maxValue = health;
     }
 
@@ -23,16 +22,10 @@ public class Damage : MonoBehaviour
 
     public void takeDamage(float damage)
     {
-        //if (topDownJet.bounds.Contains(pixelBomb) == true)
-        //{
-        //    health -= -1;
-        //}
-
+        //when event invoked trigger negative health
         healthBar.value = health;
 
         health -= 1;
         UpdateHealthbar.Invoke(health);
-
-
     }
 }

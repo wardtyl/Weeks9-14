@@ -21,6 +21,7 @@ public class Bomb : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //using lerp to trigger bomb routes
         t += Time.deltaTime;
 
         if(t> 1)
@@ -30,18 +31,18 @@ public class Bomb : MonoBehaviour
 
         transform.position = Vector2.Lerp(start.position, end.position, t);
 
+        //if jet is in bomb don't trigger effect
         bool isInBomb = bombRenderer.bounds.Contains(player.transform.position);
         if (isInBomb
             && wasInBomb == false)
         {
             wasInBomb = true;
-            //WHAT WE WANT TO HAVE HAPPEN WHEN THE PLAYER ENTERS THE SENSOR
             OnEnter.Invoke();
         }
+        //if jet is in bomb trigger effect
         else if (!isInBomb && wasInBomb)
         {
             wasInBomb = false;
-            //WHAT WE WANT TO HAVE HAPPEN WHEN THE PLAYER EXITS THE SENSOR
             OnLeave.Invoke();
         }
 
