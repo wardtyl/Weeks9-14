@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 418651930319069012}
   - component: {fileID: 5499539068928464350}
   - component: {fileID: -4458380859963924363}
-  - component: {fileID: 4187360087714074151}
+  - component: {fileID: -8291439531853157286}
   m_Layer: 0
   m_Name: Pixel Bomb
   m_TagString: Untagged
@@ -199,7 +199,7 @@ MonoBehaviour:
   m_DefaultActionMap: 
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
---- !u!114 &4187360087714074151
+--- !u!114 &-8291439531853157286
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -211,3 +211,37 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f7855105cc71fc64eaa6016a401e077d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Bomb
+  OnEnter:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: -5722580934614648518, guid: 36bf313e24b02114384b46d4ecc773b6, type: 3}
+        m_TargetAssemblyTypeName: 
+        m_MethodName: 
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  OnLeave:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: -5722580934614648518, guid: 36bf313e24b02114384b46d4ecc773b6, type: 3}
+        m_TargetAssemblyTypeName: 
+        m_MethodName: 
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  player: {fileID: 0}
+  start: {fileID: 0}
+  end: {fileID: 0}
+  t: 0

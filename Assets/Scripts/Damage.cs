@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.UI;
 public class Damage : MonoBehaviour
 {
@@ -6,7 +7,7 @@ public class Damage : MonoBehaviour
     public SpriteRenderer topDownJet;
     public SpriteRenderer pixelBomb;
     public int health = 5;
-    private Vector3 bomb;
+    public UnityEvent<float> UpdateHealthbar;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -16,12 +17,22 @@ public class Damage : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Vector3 bomb = pixelBomb;
-        if(topDownJet.bounds.Contains("pixelBomb") == true)
-        {
-            health -= -1;
-        }
+        
+
+    }
+
+    public void takeDamage(float damage)
+    {
+        //if (topDownJet.bounds.Contains(pixelBomb) == true)
+        //{
+        //    health -= -1;
+        //}
 
         healthBar.value = health;
+
+        health -= 1;
+        UpdateHealthbar.Invoke(health);
+
+
     }
 }
